@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelCut Studio | Video Editing</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #09090f;
+      color: white;
+    }
+
+    header {
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #292033;
+    }
+
+    .logo {
+      color: #b66bff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      margin-left: 14px;
+      font-size: 13px;
+    }
+
+    .hero {
+      padding: 85px 8% 65px;
+      text-align: center;
+      background: radial-gradient(
+        circle at top,
+        #32134d,
+        #09090f 65%
+      );
+    }
+
+    .tag {
+      color: #c78bff;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 8vw, 65px);
+      margin: 22px 0;
+      line-height: 1.1;
+    }
+
+    h1 span {
+      color: #b66bff;
+    }
+
+    .hero p {
+      color: #bdb8c8;
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      background: #9b4dff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 55px 8%;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .sub {
+      color: #aaa2b8;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit, minmax(220px, 1fr)
+      );
+      gap: 18px;
+    }
+
+    .card {
+      background: #14121b;
+      border: 1px solid #30243e;
+      padding: 25px;
+      border-radius: 14px;
+    }
+
+    .card h3 {
+      color: #c78bff;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #bdb8c8;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .work {
+      background: #100d16;
+    }
+
+    .video-box {
+      min-height: 160px;
+      padding: 25px;
+      border: 1px dashed #8d52bc;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #c78bff;
+      gap: 12px;
+    }
+
+    .video-box p {
+      color: #aaa2b8;
+      font-size: 14px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #93899f;
+      border-top: 1px solid #292033;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      nav a {
+        margin-left: 7px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 70px 6%;
+      }
+
+      section {
+        padding: 45px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">PixelCut Studio.</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#work">My Work</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="home">
+    <div class="tag">VIDEO EDITING PORTFOLIO</div>
+    <h1>Turn Moments Into<br>
+      <span>Cinematic Stories.</span>
+    </h1>
+    <p>
+      Professional Reels, cinematic edits and creative
+      video storytelling designed to make your content stand out.
+    </p>
+    <a href="#work" class="btn">Explore My Work ↗</a>
+  </div>
+
+  <section id="services">
+    <h2 class="section-title">What I Do</h2>
+    <p class="sub">Creative editing for every story.</p>
+
+    <div class="services">
+      <div class="card">
+        <h3>🎬 Cinematic Editing</h3>
+        <p>Creative cuts, cinematic color and smooth transitions.</p>
+      </div>
+
+      <div class="card">
+        <h3>📱 Reels & Shorts</h3>
+        <p>Engaging vertical videos for social media content.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎵 Music Sync</h3>
+        <p>Beat-matched edits, rhythm and creative timing.</p>
+      </div>
+    </div>
+  </section>
+
+
+<section class="work" id="work">
+  <h2 class="section-title">My Creative Work</h2>
+  <p class="sub">Watch my latest video edits.</p>
+
+  <div class="card">
+    <h3>🎬 Upload Your Video</h3>
+    <p class="sub">Select a video from your phone.</p>
+
+    <input
+      type="file"
+      id="videoUpload"
+      accept="video/*"
+    >
+
+    <video
+      id="localVideo"
+      controls
+      playsinline
+      style="display:none; width:100%; margin-top:20px; border-radius:12px;"
+    ></video>
+  </div>
+  
+<div class="card" style="margin-top:20px;">
+  <h3>▶️ My YouTube Video</h3>
+
+  <div style="margin-top:16px;">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/https://youtube.com/@vieditz-by?si=llJsIwzJoKlAKYgA"
+      title="PixelCut Studio Video"
+      style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px;"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+</section>
+
+<script>
+  const upload = document.getElementById("videoUpload");
+  const player = document.getElementById("localVideo");
+
+  upload.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (file) {
+      player.src = URL.createObjectURL(file);
+      player.style.display = "block";
+      player.load();
+    }
+  });
+</script>
+
+
+  <section class="contact" id="contact">
+    <h2 class="section-title">Let's Create Something Great</h2>
+    <p class="sub">
+      Have a video project in mind? Let's work together.
+    </p>
+    <a href="#home" class="btn">Back to Top ↑</a>
+  </section>
+
+  <footer>
+    © 2026 PixelCut Studio. All rights reserved.
+  </footer>
+
+</body>
+</html>
